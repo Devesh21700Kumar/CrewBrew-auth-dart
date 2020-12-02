@@ -1,14 +1,12 @@
-import 'package:crewbrew/services/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:crewbrew/services/auth.dart';
 
-class SignIn extends StatefulWidget {
+class Register extends StatefulWidget {
   @override
-  _SignInState createState() => _SignInState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _SignInState extends State<SignIn> {
-
-  final AuthService _auth = AuthService();
+class _RegisterState extends State<Register> {
 
   //text field state
   String email = '';
@@ -19,13 +17,13 @@ class _SignInState extends State<SignIn> {
     return Scaffold(
       backgroundColor: Colors.brown[100],
       appBar: AppBar(
-        backgroundColor: Colors.brown[400],
-        elevation: 0.0,
-        title: Text('Sign in to Brew to be the Crew')
+          backgroundColor: Colors.brown[400],
+          elevation: 0.0,
+          title: Text('Sign up to Brew to be the Crew')
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-       /* child: RaisedButton(
+        /* child: RaisedButton(
           child: Text('Sign in anon'),
           onPressed: () async{
           dynamic result = await _auth.signInAnon();
@@ -43,29 +41,29 @@ class _SignInState extends State<SignIn> {
             children: <Widget>[
               SizedBox(height: 30.0),
               TextFormField(
-               onChanged: (val){
-              setState(() {
-                email=val;
-              });
-               }
+                  onChanged: (val) {
+                    setState(() {
+                      email = val;
+                    });
+                  }
               ),
 
 
               SizedBox(height: 20.0),
               TextFormField(
-                obscureText: true,
-                onChanged: (val){
-                  setState(() {
-                    password=val;
-                  });
-                //hides password by obscure
-                }
+                  obscureText: true,
+                  onChanged: (val) {
+                    setState(() {
+                      password = val;
+                    });
+                    //hides password by obscure
+                  }
               ),
               SizedBox(height: 20.0),
               RaisedButton(
                 color: Colors.pink[400],
                 child: Text(
-                  'Sign in',
+                  'Register',
                   style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () async {
